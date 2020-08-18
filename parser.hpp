@@ -1,8 +1,10 @@
+#pragma once
 #include <tuple>
 #include <vector>
 #include <unordered_map>
 #include <fstream>
 #include "vutility.hpp"
+
 enum c_type
 {
     C_ARITHMETIC,
