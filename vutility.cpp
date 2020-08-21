@@ -14,14 +14,12 @@ std::vector<std::string> vutility::split(std::string str, char delimit)
 
 std::string vutility::trim(std::string str)
 {
-    if (str.substr(0, 2) == "//")
+    if (str.find('/') != std::string::npos) // comments
     {
-        str.erase();
+        str.erase(str.find('/'));
     }
-    else
-    {
-        str.erase(0, str.find_first_not_of(" \r\t\v\n")); //prefixing
-        str.erase(str.find_last_not_of(" \r\t\v\n") + 1); //surfixing}
-    }
+    str.erase(0, str.find_first_not_of(" \r\t\v\n")); //prefixing
+    str.erase(str.find_last_not_of(" \r\t\v\n") + 1); //surfixing}
+
     return str;
 }
