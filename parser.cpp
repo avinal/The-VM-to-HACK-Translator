@@ -76,3 +76,18 @@ std::vector<vmcommand> parser::get_commands()
 {
     return this->parsed;
 }
+
+bool parser::change_file(std::string name)
+{
+    this->parsed.clear();
+    this->input_file = name;
+
+    if (this->parsed.size() == 0 && input_file == name)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}

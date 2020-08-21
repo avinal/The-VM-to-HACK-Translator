@@ -27,7 +27,7 @@ private:
     std::vector<vmcommand> parsed;
 
 public:
-    parser(std::string file) : input_file(file) {}
+    bool change_file(std::string name);
     std::vector<vmcommand> get_commands();
     c_type command_type(std::string com);
     void parse();
