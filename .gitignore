@@ -35,9 +35,3 @@ VMTranslator
 *.asm
 .vscode
 *.zip
-FibonacciElement
-NestedCall
-SimpleFunction
-StaticsTest
-*.vm
-*.zip
