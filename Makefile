@@ -4,26 +4,22 @@ WARNINGS = -pedantic -Wall -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unu
 
 
 TARGET = VMTranslator
-OBJ_DIR = build 
 OBJECTS = code_writer.o parser.o vutility.o
-TEST_OBJS = parser_test.o 
+
 all:$(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CXX) $(WARNINGS) -o $(TARGET) Main.cpp $(OBJECTS) $(STDVERSION)
+	$(CXX) $(WARNINGS) -o $(TARGET) src/Main.cpp $(OBJECTS) $(STDVERSION)
 
-vutility.o: vutility.cpp vutility.hpp 
-	$(CXX) $(WARNINGS) $(STDVERSION) -c vutility.cpp -o vutility.o
+vutility.o: src/vutility.cpp include/vutility.hpp 
+	$(CXX) $(WARNINGS) $(STDVERSION) -c src/vutility.cpp -o vutility.o
 
-parser.o: parser.cpp parser.hpp 
-	$(CXX) $(WARNINGS) $(STDVERSION) -c parser.cpp -o parser.o
+parser.o: src/parser.cpp include/parser.hpp 
+	$(CXX) $(WARNINGS) $(STDVERSION) -c src/parser.cpp -o parser.o
 
-code_writer.o:code_writer.cpp code_writer.hpp
-	$(CXX) $(STDVERSION) -c code_writer.cpp -o code_writer.o
+code_writer.o: src/code_writer.cpp include/code_writer.hpp
+	$(CXX) $(WARNINGS) $(STDVERSION) -c src/code_writer.cpp -o code_writer.o
 
-
-test:
-	$(CXX) $(STDVERSION) tests/*.cpp tests/catch/catch_main.cpp parser.cpp code_writer.cpp -o test
 
 clean:
 	rm -rf *.o $(TARGET) *.asm 
