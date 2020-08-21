@@ -1,7 +1,7 @@
 
 #include <vector>
 #include <string>
-#include<sstream>
+#include <sstream>
 class vutility
 {
 private:
