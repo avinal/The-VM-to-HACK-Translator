@@ -1,5 +1,5 @@
 CXX = g++
-STDVERSION = -std=c++17
+STDVERSION = -std=c++17 -lstdc++fs
 WARNINGS = -pedantic -Wall -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable
 
 
@@ -10,7 +10,7 @@ TEST_OBJS = parser_test.o
 all:$(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CXX) $(WARNINGS) $(STDVERSION) -o $(TARGET) Main.cpp $(OBJECTS)
+	$(CXX) $(WARNINGS) -o $(TARGET) Main.cpp $(OBJECTS) $(STDVERSION)
 
 vutility.o: vutility.cpp vutility.hpp 
 	$(CXX) $(WARNINGS) $(STDVERSION) -c vutility.cpp -o vutility.o
