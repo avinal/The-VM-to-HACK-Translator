@@ -1,4 +1,4 @@
-#include "parser.hpp"
+#include "../include/parser.hpp"
 
 c_type parser::command_type(std::string com)
 {

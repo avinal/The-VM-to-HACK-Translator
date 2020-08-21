@@ -1,4 +1,4 @@
-#include "vutility.hpp"
+#include "../include/vutility.hpp"
 
 std::vector<std::string> vutility::split(std::string str, char delimit)
 {
