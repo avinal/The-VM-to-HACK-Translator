@@ -1,4 +1,3 @@
-
 #include "parser.hpp"
 #include <functional>
 #include <string>
@@ -30,6 +29,7 @@ private:
 public:
     code_writer(lots_of_files name);
     void write_assembly();
+
     void write_push(std::string segment, int index, bool debug);
     void write_push(std::string segment, bool debug);
     void write_pop(std::string segment, int index, bool debug);
@@ -40,17 +40,6 @@ public:
     void write_neg_not(std::string op, bool debug);
     void write_eq_lt_gt(std::string op, bool debug);
 
-    /*
-    void write_add(bool debug);
-    void write_sub(bool debug);
-    void write_neg(bool debug);
-    void write_and(bool debug);
-    void write_or(bool debug);
-    void write_not(bool debug);
-    void write_eq(bool debug);
-    void write_lt(bool debug);
-    void write_gt(bool debug);
-*/
     void write_init(bool debug);
 
     void write_label(std::string label, int index, bool debug);
